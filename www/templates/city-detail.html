@@ -1,0 +1,26 @@
+<ion-view view-title="{{data.city.name}}">
+  <ion-content class="padding">
+  <ion-refresher pulling-text="Тянем-потянем" on-refresh="refresh()">
+  </ion-refresher>
+    <h2>
+      Город: {{data.city.name}}
+    </h2>
+    <p>
+      Страна: {{data.city.country}}
+    </p>
+    <p>
+      Население: {{data.city.population}} чел.
+    </p>
+    <p>
+      Широта: {{data.city.coord.lon}}
+      Долгота: {{data.city.coord.lat}}
+    </p>
+    <ion-list>
+      <a class="item item-avatar" ng-repeat="day in data.list" href="#">
+        <img ng-src="http://openweathermap.org/img/w/{{day.weather[0].icon}}.png">
+        <h2>Температура: {{(day.temp.day - 273.15).toFixed(2)}} C</h2>
+        <p>На дату: <span ng-bind="day.dt*1000 | date: 'dd.MM.yyyy'"></span></p>
+      </a>
+    </ion-list>
+  </ion-content>
+</ion-view>
