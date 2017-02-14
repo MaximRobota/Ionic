@@ -1,0 +1,7 @@
+"type": "privileged",
+"permissions": {
+    "contacts": {
+        "access": "readwrite",
+        "description": "Describe why there is a need for such permission"
+    }
+}
